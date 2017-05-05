@@ -19,7 +19,7 @@ namespace WindowsStress
         static void Main(string[] args)
         {
             /*
-             * The code here follows and then is modifed to be parameterizable: 
+             * The code here is a modifed (to be parameterizable) version of the code at: 
              * http://stackoverflow.com/questions/2514544/simulate-steady-cpu-load-and-spikes
              * another interesting article covering this topic is:
              * http://stackoverflow.com/questions/5577098/how-to-run-cpu-at-a-given-load-cpu-utilization
@@ -67,15 +67,6 @@ namespace WindowsStress
                 t.Start(cpuUsage);
                 threads.Add(t);
             }
-            //for (int i = 0; i < threads.Count; i++)
-            //{
-            //    System.Console.WriteLine("CPU Assignment: " + i % Environment.ProcessorCount);
-            //    ProcessThread Thread = (ProcessThread) threads[i].;
-            //    String mask = (i % Environment.ProcessorCount).ToString("X");
-            //    System.Console.WriteLine(mask);
-            //    AffinityMask = long.Parse(mask, System.Globalization.NumberStyles.HexNumber);
-            //    Thread.ProcessorAffinity = (IntPtr)AffinityMask;
-            //}
             Thread.Sleep(duration);
             foreach (var t in threads)
             {
